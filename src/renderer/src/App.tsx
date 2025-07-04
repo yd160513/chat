@@ -1,15 +1,14 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { selectValue } from '@renderer/store/mainSlice'
+import { Route, Routes } from 'react-router-dom'
+import Layout from '@renderer/components/layout'
 
 function App(): React.JSX.Element {
 
-  const value = useSelector(selectValue)
 
   return (
-    <>
-      app - {value}
-    </>
+    <Routes>
+      <Route path="/" element={<Layout />} />
+    </Routes>
   )
 }
 
