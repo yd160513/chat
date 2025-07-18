@@ -1,0 +1,51 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "33906935",
+      "name": "工作台-04",
+      "font_class": "gongzuotai-04",
+      "unicode": "ea26",
+      "unicode_decimal": 59942
+    },
+    {
+      "icon_id": "33906939",
+      "name": "管理中心-设置-04",
+      "font_class": "guanlizhongxin-shezhi-04",
+      "unicode": "ea27",
+      "unicode_decimal": 59943
+    },
+    {
+      "icon_id": "33906955",
+      "name": "管理中心-设置-03",
+      "font_class": "guanlizhongxin-shezhi-03",
+      "unicode": "ea28",
+      "unicode_decimal": 59944
+    },
+    {
+      "icon_id": "35567583",
+      "name": "消息 (3)",
+      "font_class": "a-xiaoxi3",
+      "unicode": "eb3f",
+      "unicode_decimal": 60223
+    },
+    {
+      "icon_id": "35567602",
+      "name": "邮件 (2)",
+      "font_class": "a-youjian2",
+      "unicode": "eb40",
+      "unicode_decimal": 60224
+    },
+    {
+      "icon_id": "35703254",
+      "name": "文档 (14)",
+      "font_class": "a-wendang14",
+      "unicode": "ebb8",
+      "unicode_decimal": 60344
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 @import 'base.css';
+@import "./../iconfont/iconfont.css";
 
 #root {
   width: 100%;

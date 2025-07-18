@@ -11,27 +11,27 @@ export default function Navbar() {
   const navbarItems = useRef<NavbarItem[]>([
     {
       name: '消息',
-      icon: 'message-icon',
+      icon: 'icon-a-xiaoxi3',
       value: 0
     },
     {
       name: '邮件',
-      icon: 'email-icon',
+      icon: 'icon-a-youjian2',
       value: 0
     },
     {
       name: '文档',
-      icon: 'document-icon',
+      icon: 'icon-a-wendang14',
       value: 0
     },
     {
       name: '工作台',
-      icon: 'workbench-icon',
+      icon: 'icon-gongzuotai-04',
       value: 0
     }
   ])
 
-  const activeItem: Ref<NavbarItem> = useRef({
+  const [activeItem, setActiveItem] = useState({
     name: '消息',
     icon: 'message-icon',
     value: 0
@@ -40,19 +40,24 @@ export default function Navbar() {
   const otherItems = useRef([
     {
       name: '管理后台',
-      icon: 'management-icon',
+      icon: 'icon-guanlizhongxin-shezhi-03',
       value: 0
     },
     {
       name: '更多',
-      icon: 'more-icon',
+      icon: 'icon-guanlizhongxin-shezhi-04',
       value: 0
     }
   ])
 
-  console.log('activeItem: ', activeItem.current)
+  console.log('activeItem: ', activeItem)
 
   const [userName, setUserName] = useState('阿豪阿卡阿甘')
+
+  const changeNav = (item: NavbarItem) => {
+    if (item.name === activeItem.name) return
+    setActiveItem(item)
+  }
 
   return (
     <div className={styles.navbar}>
@@ -64,10 +69,11 @@ export default function Navbar() {
       <div className={styles.navbarItemArea}>
         {navbarItems.current.map((item) => (
           <div
-            className={`${styles.navbarItem} ${item.name === activeItem.current?.name ? styles.active : ''}`}
+            className={`${styles.navbarItem} ${item.name === activeItem.name ? styles.active : ''}`}
+            onClick={() => changeNav(item)}
             key={item.name}
           >
-            <div className={styles.navbarItemIcon}></div>
+            <div className={`${styles.navbarItemIcon} iconfont ${item.icon}`}></div>
             <div className={styles.navbarItemName}>{item.name}</div>
           </div>
         ))}
@@ -76,7 +82,7 @@ export default function Navbar() {
       <div className={styles.otherOperationArea}>
         {otherItems.current.map((item) => (
           <div className={styles.otherOperationItem} key={item.name}>
-            <div className={styles.otherOperationItemIcon}></div>
+            <div className={`${styles.otherOperationItemIcon} iconfont ${item.icon}`}></div>
             <div className={styles.otherOperationItemName}>{item.name}</div>
           </div>
         ))}
