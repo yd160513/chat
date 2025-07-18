@@ -1,0 +1,93 @@
+.navbar {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  flex-direction: column;
+
+  .otherOperationArea {
+
+    .otherOperationItem {
+      display: flex;
+      align-items: center;
+      color: #3A3D43;
+
+      // 除了第一个其他都margin-top: 14px;
+      &:not(:first-child) {
+        margin-top: 14px;
+      }
+
+      .otherOperationItemName {
+        font-size: 14px;
+      }
+
+      .otherOperationItemIcon {
+        width: 16px;
+        height: 16px;
+        background-image: url("@renderer/assets/image/ahao.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .navbarItemArea {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    .navbarItem {
+      padding: 8px 12px 8px 8px;
+      color: #3A3D43;
+      display: flex;
+      align-items: center;
+
+      &.active {
+        background: rgba(64, 124, 232, 0.2);
+        border-radius: 5px;
+        color: #407DE8;
+      }
+
+      .navbarItemIcon {
+        width: 16px;
+        height: 16px;
+        background-image: url("@renderer/assets/image/ahao.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        margin-right: 10px;
+      }
+
+      .navbarItemName {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .userAvatar {
+    height: 24px;
+    overflow: hidden;
+    margin: 44px 4px 20px;
+    display: flex;
+    align-items: center;
+
+    .avatar {
+      width: 24px;
+      height: 24px;
+      background-image: url("@renderer/assets/image/ahao.png");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      border-radius: 1px;
+      overflow: hidden;
+    }
+
+    .userName {
+      color: #3A3D43;
+      font-size: 12px;
+      flex: 1;
+      margin-left: 8px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}

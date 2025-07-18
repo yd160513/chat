@@ -5,10 +5,12 @@
   display: flex;
   overflow: hidden;
 
-  .navbar {
-    border: 1px solid blue;
+  .navbarArea {
     width: 144px;
     flex-shrink: 0;
+    display: flex;
+    padding: 0 12px 15px;
+    background: #E9E7EA;
   }
 
   .main {
@@ -25,29 +27,29 @@
       display: flex;
       flex-direction: column;
 
-      .conversation-bottom {
+      .conversationBottom {
         border-right: 1px solid blue;
         flex: 1;
         overflow: hidden;
         display: flex;
 
-        .conversation-info {
+        .conversationInfo {
           min-width: 360px;
           border-left: 1px solid blue;
         }
 
-        .conversation-message-content {
+        .conversationMessageContent {
           min-width: 704px;
           border: 1px solid red;
           display: flex;
           flex-direction: column;
 
-          .conversation-message-input {
+          .conversationMessageInput {
             border: 1px solid blue;
             height: 148px;
           }
 
-          .conversation-message-list-area {
+          .conversationMessageListArea {
             flex: 1;
             overflow-y: auto;
             overflow-x: hidden;
@@ -55,13 +57,13 @@
         }
       }
 
-      .conversation-header {
+      .conversationHeader {
         border: 1px solid red;
         height: 78px;
       }
     }
 
-    .conversation-list {
+    .conversationList {
       width: 308px;
       border: 1px solid blue;
     }

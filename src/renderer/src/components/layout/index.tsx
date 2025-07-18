@@ -2,13 +2,16 @@ import { useSelector } from 'react-redux'
 import { selectValue } from '@renderer/store/mainSlice'
 import styles from './index.module.scss'
 import MessageItem from '@renderer/components/messageItem'
+import Navbar from '@renderer/components/navbar'
 
 export default function Layout() {
   const value :string = useSelector(selectValue)
 
   return (
     <div className={styles.layout}>
-      <div className={styles.navbar}>左侧导航</div>
+      <div className={styles.navbarArea}>
+        <Navbar />
+      </div>
       <div className={styles.main}>
         <div className={styles.conversationList}>会话列表</div>
         <div className={styles.conversation}>
