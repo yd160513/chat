@@ -10,11 +10,6 @@ export default defineConfig({
     plugins: [externalizeDepsPlugin()]
   },
   renderer: {
-    css: {
-      modules: {
-        localsConvention: 'camelCaseOnly',
-      }
-    },
     resolve: {
       alias: {
         '@renderer': resolve('src/renderer/src')
