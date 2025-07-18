@@ -10,6 +10,7 @@
       display: flex;
       align-items: center;
       color: #3A3D43;
+      app-region: no-drag;
 
       // 除了第一个其他都margin-top: 14px;
       &:not(:first-child) {
@@ -41,6 +42,7 @@
       color: #3A3D43;
       display: flex;
       align-items: center;
+      app-region: no-drag;
 
       &.active {
         background: rgba(64, 124, 232, 0.2);
@@ -69,6 +71,7 @@
     margin: 44px 4px 20px;
     display: flex;
     align-items: center;
+    app-region: no-drag;
 
     .avatar {
       width: 24px;

@@ -11,6 +11,8 @@
     display: flex;
     padding: 0 12px 15px;
     background: #E9E7EA;
+    app-region: drag;
+    user-select: none;
   }
 
   .main {
