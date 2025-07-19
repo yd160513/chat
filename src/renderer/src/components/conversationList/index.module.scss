@@ -6,6 +6,8 @@
 
   .conversationHeader {
     background: #ffffff;
+    app-region: drag;
+    user-select: none;
 
     .conversationHeaderContent {
       margin: 24px 17px 12px 20px;
@@ -15,14 +17,18 @@
       .operationBtn {
         width: 20px;
         height: 20px;
+        font-size: 20px;
         color: #7A8294;
         margin-left: 8px;
         cursor: pointer;
+        flex-shrink: 0;
+        app-region: no-drag;
       }
 
       .searchArea {
         flex: 1;
         overflow: hidden;
+        app-region: no-drag;
       }
 
     }
