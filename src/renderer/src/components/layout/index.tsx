@@ -3,9 +3,10 @@ import { selectValue } from '@renderer/store/mainSlice'
 import styles from './index.module.scss'
 import MessageItem from '@renderer/components/messageItem'
 import Navbar from '@renderer/components/navbar'
+import ConversationList from '@renderer/components/conversationList'
 
 export default function Layout() {
-  const value :string = useSelector(selectValue)
+  const value: string = useSelector(selectValue)
 
   return (
     <div className={styles.layout}>
@@ -13,10 +14,11 @@ export default function Layout() {
         <Navbar />
       </div>
       <div className={styles.main}>
-        <div className={styles.conversationList}>会话列表</div>
+        <div className={styles.conversationListArea}>
+          <ConversationList />
+        </div>
         <div className={styles.conversation}>
-          <div className={styles.conversationHeader}>
-          </div>
+          <div className={styles.conversationHeader}></div>
           <div className={styles.conversationBottom}>
             <div className={styles.conversationMessageContent}>
               <div className={styles.conversationMessageListArea}>
@@ -29,9 +31,7 @@ export default function Layout() {
                 <button>发送</button>
               </div>
             </div>
-            <div className={styles.conversationInfo}>
-              会话信息
-            </div>
+            <div className={styles.conversationInfo}>会话信息</div>
           </div>
         </div>
       </div>

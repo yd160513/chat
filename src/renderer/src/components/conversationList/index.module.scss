@@ -1,0 +1,99 @@
+.conversationList {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+
+  .conversationHeader {
+    background: #ffffff;
+
+    .conversationHeaderContent {
+      margin: 24px 17px 12px 20px;
+      display: flex;
+      align-items: center;
+
+      .operationBtn {
+        width: 20px;
+        height: 20px;
+        color: #7A8294;
+        margin-left: 8px;
+        cursor: pointer;
+      }
+
+      .searchArea {
+        flex: 1;
+        overflow: hidden;
+      }
+
+    }
+  }
+
+  .conversationBody {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: #F4F5F7;
+
+    .conversationItem {
+      padding: 14px 20px;
+      display: flex;
+
+      .conversationInfo {
+        margin-left: 10px;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        overflow: hidden;
+        justify-content: center;
+
+        .infoBottomArea {
+          display: flex;
+
+          .conversationLastMessage {
+            color: #B0B0B0;
+            font-size: 12px;
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+
+        .infoTopArea {
+          display: flex;
+          flex: 1;
+          overflow: hidden;
+          align-items: center;
+          justify-content: space-between;
+
+          .conversationLastMessageTime {
+            color: #999999;
+            font-size: 10px;
+          }
+
+          .conversationName {
+            font-size: 14px;
+            color: #000000;
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .conversationAvatarArea {
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+        border-radius: 2px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}

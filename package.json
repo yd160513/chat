@@ -24,6 +24,7 @@
     "@electron-toolkit/preload": "^3.0.1",
     "@electron-toolkit/utils": "^4.0.0",
     "@reduxjs/toolkit": "^2.8.2",
+    "antd": "^5.26.5",
     "electron-updater": "^6.3.9",
     "react-redux": "^9.2.0",
     "react-router-dom": "^6.30.1"
