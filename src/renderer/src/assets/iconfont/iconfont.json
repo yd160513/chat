@@ -20,11 +20,18 @@
       "unicode_decimal": 59943
     },
     {
+      "icon_id": "33906946",
+      "name": "管理中心-设置-01",
+      "font_class": "guanlizhongxin-shezhi-01",
+      "unicode": "ea28",
+      "unicode_decimal": 59944
+    },
+    {
       "icon_id": "33906955",
       "name": "管理中心-设置-03",
       "font_class": "guanlizhongxin-shezhi-03",
-      "unicode": "ea28",
-      "unicode_decimal": 59944
+      "unicode": "ea29",
+      "unicode_decimal": 59945
     },
     {
       "icon_id": "35102692",
@@ -32,6 +39,13 @@
       "font_class": "xinzeng01",
       "unicode": "ea38",
       "unicode_decimal": 59960
+    },
+    {
+      "icon_id": "35120279",
+      "name": "账号 (1)",
+      "font_class": "a-zhanghao1",
+      "unicode": "ea94",
+      "unicode_decimal": 60052
     },
     {
       "icon_id": "35567583",

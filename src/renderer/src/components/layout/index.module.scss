@@ -57,9 +57,10 @@
         }
       }
 
-      .conversationHeader {
+      .conversationHeaderArea {
         border: 1px solid red;
         height: 78px;
+        display: flex;
       }
     }
 

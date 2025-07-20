@@ -4,6 +4,7 @@ import styles from './index.module.scss'
 import MessageItem from '@renderer/components/messageItem'
 import Navbar from '@renderer/components/navbar'
 import ConversationList from '@renderer/components/conversationList'
+import ConversationHeader from '@renderer/components/conversationHeader'
 
 export default function Layout() {
   const value: string = useSelector(selectValue)
@@ -18,7 +19,9 @@ export default function Layout() {
           <ConversationList />
         </div>
         <div className={styles.conversation}>
-          <div className={styles.conversationHeader}></div>
+          <div className={styles.conversationHeaderArea}>
+            <ConversationHeader />
+          </div>
           <div className={styles.conversationBottom}>
             <div className={styles.conversationMessageContent}>
               <div className={styles.conversationMessageListArea}>

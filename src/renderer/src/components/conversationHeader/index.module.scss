@@ -1,0 +1,49 @@
+.conversationHeader {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background: #FFFFFF;
+
+  .conversationOperationArea {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+
+    .conversationOperationAdd {
+      width: 24px;
+      height: 24px;
+      font-size: 18px;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+
+    .conversationOperationMore {
+      width: 24px;
+      height: 24px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  }
+
+  .conversationTitleArea {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .conversationTitle {
+      font-size: 18px;
+      color: #000000;
+    }
+
+    .conversationDesc {
+      font-size: 12px;
+      color: #999999;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
