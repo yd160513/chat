@@ -1,13 +1,13 @@
 import { useSelector } from 'react-redux'
 import { selectValue } from '@renderer/store/mainSlice'
 import styles from './index.module.scss'
-import MessageItem from '@renderer/components/messageItem'
 import Navbar from '@renderer/components/navbar'
 import ConversationList from '@renderer/components/conversationList'
 import ConversationHeader from '@renderer/components/conversationHeader'
+import ConversationMessage from '@renderer/components/conversationMessage'
 
 export default function Layout() {
-  const value: string = useSelector(selectValue)
+  const value: number = useSelector(selectValue)
 
   return (
     <div className={styles.layout}>
@@ -24,10 +24,8 @@ export default function Layout() {
           </div>
           <div className={styles.conversationBottom}>
             <div className={styles.conversationMessageContent}>
-              <div className={styles.conversationMessageListArea}>
-                <div className={styles.conversationMessageList}>
-                  <MessageItem message={value}></MessageItem>
-                </div>
+              <div className={styles.conversationMessageList}>
+                <ConversationMessage conversationId={value} />
               </div>
               <div className={styles.conversationMessageInput}>
                 <input type="text" placeholder="请输入消息" />
