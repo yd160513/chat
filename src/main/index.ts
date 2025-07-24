@@ -53,6 +53,13 @@ app.whenReady().then(() => {
   // IPC test
   ipcMain.on('ping', () => console.log('pong'))
 
+  // 打开会话信息
+  ipcMain.on('open-conversation-info', (event, { width, isOpen }) => {
+    const win = BrowserWindow.fromWebContents(event.sender)
+    const _width:number = isOpen ? width : -width
+    win?.setSize(win.getSize()[0] + _width, win.getSize()[1])
+  })
+
   createWindow()
 
   app.on('activate', function () {

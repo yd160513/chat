@@ -1,14 +1,16 @@
 import { useSelector } from 'react-redux'
-import { selectValue } from '@renderer/store/mainSlice'
+import { currentConversationId, openConversationInfo } from '@renderer/store/mainSlice'
 import styles from './index.module.scss'
 import Navbar from '@renderer/components/navbar'
 import ConversationList from '@renderer/components/conversationList'
 import ConversationHeader from '@renderer/components/conversationHeader'
 import ConversationMessage from '@renderer/components/conversationMessage'
 import ConversationInput from '@renderer/components/conversationInput'
+import ConversationInfo from '@renderer/components/conversationInfo'
 
 export default function Layout() {
-  const value: number = useSelector(selectValue)
+  const conversationId: number = useSelector(currentConversationId)
+  const isOpenConversationInfo = useSelector(openConversationInfo)
 
   return (
     <div className={styles.layout}>
@@ -26,13 +28,13 @@ export default function Layout() {
           <div className={styles.conversationBottom}>
             <div className={styles.conversationMessageContent}>
               <div className={styles.conversationMessageList}>
-                <ConversationMessage conversationId={value} />
+                <ConversationMessage conversationId={conversationId} />
               </div>
               <div className={styles.conversationInputArea}>
                 <ConversationInput />
               </div>
             </div>
-            <div className={styles.conversationInfo}>会话信息</div>
+            {isOpenConversationInfo && <ConversationInfo />}
           </div>
         </div>
       </div>

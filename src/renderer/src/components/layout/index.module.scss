@@ -26,15 +26,9 @@
       flex-direction: column;
 
       .conversationBottom {
-        border-right: 1px solid blue;
         flex: 1;
         overflow: hidden;
         display: flex;
-
-        .conversationInfo {
-          width: 264px;
-          border-left: 1px solid blue;
-        }
 
         .conversationMessageContent {
           //min-width: 426px;

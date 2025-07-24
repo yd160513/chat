@@ -3,15 +3,21 @@ import { createSlice } from '@reduxjs/toolkit'
 export const mainSlice = createSlice({
   name: 'main',
   initialState: {
-    value: 111
+    isOpenConversationInfo: false,
+    currentConversationId: -1,
   },
   reducers: {
-    increment: (state) => {
-      state.value += 1
+    setIsOpenConversationInfo: (state, action) => {
+      state.isOpenConversationInfo = action.payload
     },
+    setCurrentConversationId: (state, action) => {
+      state.currentConversationId = action.payload
+    }
   }
 })
 
-export const selectValue = (state: any) => state.main.value
+export const openConversationInfo = (state: any) => state.main.isOpenConversationInfo
+export const currentConversationId = (state: any) => state.main.currentConversationId
+export const { setIsOpenConversationInfo, setCurrentConversationId } = mainSlice.actions
 
-export default mainSlice.reducer;
+export default mainSlice.reducer
