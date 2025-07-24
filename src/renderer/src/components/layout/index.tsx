@@ -5,6 +5,7 @@ import Navbar from '@renderer/components/navbar'
 import ConversationList from '@renderer/components/conversationList'
 import ConversationHeader from '@renderer/components/conversationHeader'
 import ConversationMessage from '@renderer/components/conversationMessage'
+import ConversationInput from '@renderer/components/conversationInput'
 
 export default function Layout() {
   const value: number = useSelector(selectValue)
@@ -27,9 +28,8 @@ export default function Layout() {
               <div className={styles.conversationMessageList}>
                 <ConversationMessage conversationId={value} />
               </div>
-              <div className={styles.conversationMessageInput}>
-                <input type="text" placeholder="请输入消息" />
-                <button>发送</button>
+              <div className={styles.conversationInputArea}>
+                <ConversationInput />
               </div>
             </div>
             <div className={styles.conversationInfo}>会话信息</div>

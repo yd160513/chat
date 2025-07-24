@@ -42,9 +42,9 @@
           display: flex;
           flex-direction: column;
 
-          .conversationMessageInput {
-            border: 1px solid blue;
-            height: 148px;
+          .conversationInputArea {
+            overflow: hidden;
+            border-top: 1px solid #d6d6d6;
           }
 
           .conversationMessageList {
@@ -64,6 +64,7 @@
     .conversationListArea {
       width: 308px;
       display: flex;
+      border-right: 1px solid #d6d6d6;
     }
   }
 }

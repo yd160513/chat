@@ -41,6 +41,20 @@
       "unicode_decimal": 59960
     },
     {
+      "icon_id": "35120028",
+      "name": "表情 (21)",
+      "font_class": "a-biaoqing21",
+      "unicode": "ea7e",
+      "unicode_decimal": 60030
+    },
+    {
+      "icon_id": "35120262",
+      "name": "委托 (4)",
+      "font_class": "a-weituo4",
+      "unicode": "ea90",
+      "unicode_decimal": 60048
+    },
+    {
       "icon_id": "35120279",
       "name": "账号 (1)",
       "font_class": "a-zhanghao1",

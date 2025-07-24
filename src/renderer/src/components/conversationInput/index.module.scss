@@ -1,0 +1,65 @@
+.conversationInput {
+  display: flex;
+  flex-direction: column;
+  height: 148px;
+
+  .inputContentArea {
+    display: flex;
+    flex: 1;
+
+    :global(.ant-input) {
+      border-radius: 0 !important;
+      border: none;
+    }
+
+    :global(.ant-input-outlined) {
+      &:hover {
+        border-color: #d9d9d9;
+      }
+      &:focus-within {
+        border-color: #d9d9d9;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .moreOperationArea {
+    height: 38px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 6px;
+
+    .rightArea {
+      display: flex;
+      align-items: center;
+
+      .operationItem {
+        margin-left: 6px;
+        width: 24px;
+        height: 24px;
+        cursor: pointer;
+        font-size: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .leftArea {
+      flex: 1;
+      display: flex;
+      align-items: center;
+
+      .operationItem {
+        width: 24px;
+        height: 24px;
+        margin-right: 6px;
+        cursor: pointer;
+        font-size: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
