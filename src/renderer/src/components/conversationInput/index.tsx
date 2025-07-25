@@ -13,11 +13,8 @@ export default function ConversationInput() {
 
   const openConversationInfoHandle = () => {
     dispatch(setIsOpenConversationInfo(!isOpenConversationInfo))
-  }
-
-  useEffect(() => {
     window.api.openConversationInfo(isOpenConversationInfo)
-  }, [isOpenConversationInfo])
+  }
 
   return (
     <div className={styles.conversationInput}>
