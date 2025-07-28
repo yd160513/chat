@@ -2,7 +2,8 @@ import styles from './index.module.scss'
 import { Input } from 'antd'
 import { useDispatch, useSelector } from 'react-redux'
 import { openConversationInfo, setIsOpenConversationInfo } from '@renderer/store/mainSlice'
-import { useEffect } from 'react'
+import { useState } from 'react'
+import { sendMessage } from '@renderer/utils/websocketManager'
 
 const { TextArea } = Input
 
@@ -11,9 +12,17 @@ export default function ConversationInput() {
 
   const dispatch = useDispatch()
 
+  const [value, setValue] = useState('')
+
   const openConversationInfoHandle = () => {
     dispatch(setIsOpenConversationInfo(!isOpenConversationInfo))
     window.api.openConversationInfo(isOpenConversationInfo)
+  }
+
+  const sendMessageHandle = () => {
+    // dispatch(sendMessage(value))
+    dispatch(sendMessage({ message: value }))
+    setValue('')
   }
 
   return (
@@ -30,7 +39,12 @@ export default function ConversationInput() {
         </div>
       </div>
       <div className={styles.inputContentArea}>
-        <TextArea />
+        <TextArea
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+          placeholder="请输入内容"
+          onPressEnter={sendMessageHandle}
+        />
       </div>
     </div>
   )
