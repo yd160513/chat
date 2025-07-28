@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { openConversationInfo, setIsOpenConversationInfo } from '@renderer/store/mainSlice'
 import { useState } from 'react'
 import { sendMessage } from '@renderer/utils/websocketManager'
+import ahao from './../../assets/image/ahao.png'
 
 const { TextArea } = Input
 
@@ -20,8 +21,17 @@ export default function ConversationInput() {
   }
 
   const sendMessageHandle = () => {
+    const message = {
+      id: Date().valueOf(),
+      content: value,
+      conversationId: Date().valueOf(),
+      userAvatar: ahao,
+      userNickname: '张三',
+      // isSelf: true
+    }
+    console.log('message: ', message)
     // dispatch(sendMessage(value))
-    dispatch(sendMessage({ message: value }))
+    dispatch(sendMessage(message))
     setValue('')
   }
 

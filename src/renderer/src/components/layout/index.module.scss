@@ -32,6 +32,8 @@
 
         .conversationMessageContent {
           //min-width: 426px;
+          flex: 1;
+          overflow: hidden;
           display: flex;
           flex-direction: column;
 

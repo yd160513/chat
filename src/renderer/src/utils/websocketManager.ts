@@ -1,13 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { io, Socket } from 'socket.io-client'
-import {
-  socketConnected,
-  socketDisconnected,
-  socketError,
-  messageReceived,
-  notificationReceived,
-  usersUpdated
-} from '../store/websocket'
 
 // 创建一个 socket 管理器来处理 socket 实例
 class WebsocketManager {
@@ -34,8 +26,8 @@ class WebsocketManager {
 
     // 接收消息事件
     this.socket.on('message', (message) => {
-      console.log('socket.io message', message)
-      dispatch(messageReceived(message))
+      console.log('socket.io message', message.message)
+      dispatch(messageReceived(message.message))
     })
 
     // 接收通知事件
@@ -168,5 +160,7 @@ export const {
   clearMessage,
   clearNotification
 } = socketSlice.actions
+
+export const messages = (state: any) => state.socket.messages
 
 export default socketSlice.reducer
