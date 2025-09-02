@@ -5,6 +5,8 @@ export const mainSlice = createSlice({
   initialState: {
     isOpenConversationInfo: false,
     currentConversationId: -1,
+    isAuthenticated: false,
+    currentUser: null
   },
   reducers: {
     setIsOpenConversationInfo: (state, action) => {
@@ -12,12 +14,18 @@ export const mainSlice = createSlice({
     },
     setCurrentConversationId: (state, action) => {
       state.currentConversationId = action.payload
+    },
+    setAuthenticated: (state, action) => {
+      state.isAuthenticated = action.payload.isAuthenticated
+      state.currentUser = action.payload.user || null
     }
   }
 })
 
 export const openConversationInfo = (state: any) => state.main.isOpenConversationInfo
 export const currentConversationId = (state: any) => state.main.currentConversationId
-export const { setIsOpenConversationInfo, setCurrentConversationId } = mainSlice.actions
+export const isAuthenticated = (state: any) => state.main.isAuthenticated
+export const currentUser = (state: any) => state.main.currentUser
+export const { setIsOpenConversationInfo, setCurrentConversationId, setAuthenticated } = mainSlice.actions
 
 export default mainSlice.reducer

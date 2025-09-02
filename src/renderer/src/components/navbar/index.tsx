@@ -1,5 +1,8 @@
 import styles from './index.module.scss'
 import { Ref, useRef, useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { setAuthenticated } from '@renderer/store/mainSlice'
+import { useNavigate } from 'react-router-dom'
 
 interface NavbarItem {
   name: string
@@ -8,6 +11,9 @@ interface NavbarItem {
 }
 
 export default function Navbar() {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
   const navbarItems = useRef<NavbarItem[]>([
     {
       name: '消息',
@@ -59,6 +65,14 @@ export default function Navbar() {
     setActiveItem(item)
   }
 
+  const handleLogout = () => {
+    dispatch(setAuthenticated({
+      isAuthenticated: false,
+      user: null
+    }))
+    navigate('/')
+  }
+
   return (
     <div className={styles.navbar}>
       <div className={styles.userAvatar}>
@@ -86,6 +100,10 @@ export default function Navbar() {
             <div className={styles.otherOperationItemName}>{item.name}</div>
           </div>
         ))}
+        <div className={styles.otherOperationItem} onClick={handleLogout}>
+          <div className={`${styles.otherOperationItemIcon} iconfont icon-guanlizhongxin-shezhi-01`}></div>
+          <div className={styles.otherOperationItemName}>退出登录</div>
+        </div>
       </div>
     </div>
   )
