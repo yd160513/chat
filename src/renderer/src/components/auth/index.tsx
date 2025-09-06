@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { Button, Input, Modal, Form } from 'antd'
+import { Button, Input, Modal, Form, message } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { setAuthenticated } from '@renderer/store/mainSlice'
 import styles from './index.module.scss'
+import { login, register } from '@renderer/api'
 
 const AuthPage: React.FC = () => {
   const [isLogin, setIsLogin] = useState(true)
@@ -11,24 +12,36 @@ const AuthPage: React.FC = () => {
   const [form] = Form.useForm()
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const [loading, setLoading] = useState(false)
 
   const switchMode = () => {
     setIsLogin(!isLogin)
   }
 
-  const onFinish = (values: any) => {
+  const onFinish = async (values: any) => {
     console.log('Received values:', values)
-    if (!isLogin) {
-      // 注册逻辑
-      setIsModalVisible(true)
-    } else {
-      // 登录逻辑
-      // 这里应该有实际的认证逻辑，现在我们简单地设置认证状态
-      dispatch(setAuthenticated({
-        isAuthenticated: true,
-        user: { username: values.username }
-      }))
-      navigate('/chat')
+    setLoading(true)
+    try {
+      if (!isLogin) {
+        // 注册逻辑
+        await register(values.username, values.password)
+
+        setIsModalVisible(true)
+      } else {
+        // 登录逻辑
+        await login(values.username, values.password)
+
+        dispatch(setAuthenticated({
+          isAuthenticated: true,
+          user: { username: values.username }
+        }))
+        navigate('/chat')
+      }
+    } catch (error: any) {
+      console.error('Authentication error:', error)
+      message.error(error?.message || (isLogin ? '登录失败' : '注册失败'))
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -85,7 +98,7 @@ const AuthPage: React.FC = () => {
           )}
 
           <Form.Item>
-            <Button type="primary" htmlType="submit" block>
+            <Button type="primary" htmlType="submit" block loading={loading}>
               {isLogin ? '登录' : '注册'}
             </Button>
           </Form.Item>
